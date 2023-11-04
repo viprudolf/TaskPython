@@ -5,7 +5,7 @@ class InsertAtmData:
 
     @property
     def distance(self):
-        return round(self._base_distance / self._inserted_atms_count, 2)
+        return round(self._base_distance / self._inserted_atms_count, 2 )
 
     @property
     def inserted_atms_count(self):

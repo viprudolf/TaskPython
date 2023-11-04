@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 with sqlite3.connect('SQLTask_1.db') as db:
     cursor = db.cursor()
 
-    query = """ CREATE TABLE IF NOT EXISTS expenses (id INTEGER, data TEXT) """
+    query = """ CREATE TABLE IF NOT EXISTS expenses (data TEXT) """
 
     cursor.execute(query)
 

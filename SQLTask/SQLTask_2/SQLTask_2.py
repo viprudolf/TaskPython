@@ -18,7 +18,7 @@ with sqlite3.connect('SQLTask_2.db') as db:
 
     table_sales = """
         CREATE TABLE IF NOT EXISTS sales (
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY, 
             employee_id INTEGER,
             price INTEGER,
             FOREIGN KEY (employee_id) REFERENCES employee(id)
@@ -27,11 +27,11 @@ with sqlite3.connect('SQLTask_2.db') as db:
     cursor.execute(table_sales)
 
     sales_data = [
-        (1, 1, 100),  # Продажи Марии
-        (2, 1, 200),  # Продажи Марии
-        (3, 2, 150),  # Продажи Алексея
-        (4, 3, 300),  # Продажи Никиты
-        (5, 2, 50)  # Продажи Алексея
+        (1, 1, 100),
+        (2, 1, 200),
+        (3, 2, 150),
+        (4, 3, 300),
+        (5, 2, 50)
     ]
 
     cursor.executemany("INSERT INTO sales (id, employee_id, price) VALUES (?, ?, ?)", sales_data)

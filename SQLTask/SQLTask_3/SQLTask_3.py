@@ -5,22 +5,22 @@ cursor = conn.cursor()
 
 cursor.execute(""" 
     CREATE TABLE IF NOT EXISTS transfers (
-        from_acc int,
-        to_acc int,
-        amount int,
-        tdate date
+        from_acc INTEGER,
+        to_acc INTEGER,
+        amount INTEGER,
+        tdate DATA
     )
 """)
-
-cursor.executemany("""
-    INSERT INTO transfers (from_acc, to_acc, amount, tdate)
-    VALUES (?, ?, ?, ?)
-""", [
+list_data = [
     (1, 2, 500, '23.02.2023'),
     (2, 3, 300, '01.03.2023'),
     (3, 1, 200, '05.03.2023'),
     (1, 3, 400, '05.04.2023')
-])
+]
+cursor.executemany("""
+    INSERT INTO transfers (from_acc, to_acc, amount, tdate)
+    VALUES (?, ?, ?, ?)
+""", list_data)
 
 
 cursor.execute("""
